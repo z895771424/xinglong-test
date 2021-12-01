@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="div">123</div>
+  <script>
+    var div = document.getElementById('div')
+    div.onclick = function (e) {
+      console.log(123)
+      // event 就是一个事件对象，写到小括号里面 当形参来看
+      e = e || window.event
+      console.log(e)
+      // 兼容处理
+    }
+  </script>
+</body>
+
+</html>

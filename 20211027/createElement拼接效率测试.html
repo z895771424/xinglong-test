@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div></div>
+  <script>
+    const div = document.querySelector('div')
+    const startTimeTest = +new Date()
+    for(i = 0; i <= 1000; i++) {
+      const create = document.createElement('a')
+      div.appendChild(create)
+    }
+    const endTimeTest = +new Date()
+    console.log('%c 元素创建时间','color:blue')
+    console.log(endTimeTest - startTimeTest)
+  </script>
+</body>
+</html>
