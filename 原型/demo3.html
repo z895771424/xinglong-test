@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const user = {
+      name: 'longlong'
+    }
+    // const str = user.toString()
+    // console.log(str)
+    // console.log(user.toString === user.__proto__.toString);
+    // console.log(user.toString === Object.prototype.toString);
+
+    // console.log(Object.prototype.__proto__);
+    
+    /**
+     * 其他内建原型 像Array、Date、Function 及其它都在prototype上改在了方法
+     * 例如我们创建一个数组 [1,2,3] ，在内部默认会使用 new Array () 构造器 ，因此 Array.prototype 
+     * 变成了数组的prototype，并为这个数组提供了数组的操作方法。这样内存的存储效率都是很高的
+     * 一切都从对象继承而来
+     */
+  </script>
+</body>
+
+</html>

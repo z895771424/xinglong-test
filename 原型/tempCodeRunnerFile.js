@@ -1,0 +1,1 @@
+new Array(n + 1).join(this)

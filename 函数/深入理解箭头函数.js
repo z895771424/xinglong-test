@@ -63,3 +63,9 @@ let timer = setTimeout(() => {
     console.log('123')
   }, 1000);
 }, 1000);
+
+show() {
+  console.log(123)
+}
+// 箭头函数
+
