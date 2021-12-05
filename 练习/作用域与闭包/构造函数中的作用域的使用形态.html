@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    function Hd() {
+      let n = 1
+      // this.sum = function () {
+      //   console.log(++n)
+      // }
+      // 相当于
+      function sum() {
+        // 相当于被外面使用了，所以n被保留了
+        console.log(++n)
+      }
+      return {
+        sum: sum
+      }
+    }
+    let a = new Hd()
+    console.log(a)
+    a.sum()
+    a.sum()
+    a.sum()
+    let b = new Hd()
+    // new 一个对象，重新开辟空间
+    b.sum()
+    b.sum()
+    b.sum()
+  </script>
+</html>

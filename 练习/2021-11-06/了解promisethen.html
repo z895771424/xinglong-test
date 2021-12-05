@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    new Promise((resolve, reject) => {
+      // resolve('一瓶可乐')
+      reject('拒绝')
+    }).then().then(null, reason => {
+      // 如果之前有一个.then 那么他会一直向后传递处理
+      // 这样的语法只处理错误不处理成功了
+      console.log(reason)
+    })
+  </script>
+</body>
+
+</html>

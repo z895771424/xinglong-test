@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      padding: 200px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 200px;
+    }
+
+    li {
+      border: solid 1px #ddd;
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="text" name="hd">
+  <ul>
+  </ul>
+  <script>
+    let obj = {
+      data: new Set(),
+      set keyword(word) {
+        this.data.add(word);
+      },
+      show() {
+        const ul = document.querySelector('ul');
+        ul.innerHTML = '';
+        this.data.forEach(value => {
+          ul.innerHTML += `<li>${value}</li>`
+        })
+      }
+    }
+    const input = document.querySelector("[name='hd']");
+    input.addEventListener('blur', function () {
+      obj.keyword = this.value;
+      obj.show();
+    })
+  </script>
+</body>
+
+</html>

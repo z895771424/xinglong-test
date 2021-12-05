@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var obj = {
+            id: 1,
+            pname: '小米',
+            price: 1999
+        };
+        // 1 以前的对象添加和求改属性的方式
+        // obj.num = 1000;
+        // obj.price = 99;
+        // console.log(obj);
+        // 2 Object.defingProperty() 定义新属性或修改原有属性
+
+        Object.defineProperty(obj, 'num', {
+            value: 1000
+
+        });
+        console.log(obj);
+        Object.defineProperty(obj, 'price', {
+            value: 9.9
+        });
+        console.log(obj);
+        Object.defineProperty(obj, 'id', {
+            // 不允许修改这个属性值 默认值是false可以被修改
+            writable: false,
+        });
+        obj.id = 2;
+        // 这里的id不可以被修改
+        console.log(obj);
+        Object.defineProperty(obj, 'address', {
+            value: '中国山东找蓝翔xx单元',
+            // 不允许修改这个属性值 默认值是false可以被修改
+            writable: false,
+            // enumerable 如果值为false 不允许遍历这个属性值 默认也是false
+            enumerable: false,
+            // 如果是true的话可以被删除
+            // confiurable 如果为false 则不允许删除这个属性 不允许在修改第三个参数里面的特性
+            configurable: true
+        });
+        console.log(obj);
+        console.log(Object.keys(obj));
+        delete obj.address;
+        console.log(obj);
+    </script>
+</body>
+
+</html>

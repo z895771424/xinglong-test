@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 普通的，同步的异常捕获
+    // try {
+    //   throw new Error(666)
+    // } catch (err) {
+    //   console.err(err);
+    // }
+
+    // Promise的异步的异常捕获
+    // async function fn1() {
+    //   let n = Promise.reject(666)
+    //   try {
+    //     await n
+    //     console.log(n);
+
+    //   } catch (err) {
+    //     console.error('err', err);
+    //   }
+
+    // }
+    // fn1()
+    // async function fn2() {
+    //   return 1
+    // }
+
+    // function fn3() {
+    //   console.log('fn33333');
+    // }
+
+    // let _fn2 = fn2();
+    // console.log(_fn2);
+    // const fn1 = () => {
+    //   _fn2.then(() => {
+    //     fn3()
+    //   })
+    // }
+    // fn1()
+    // console.log(window);
+    (function(win) {
+      console.log(win);
+      win.myFn = function() {
+        console.log('执行一对一');
+      }
+      win.axx = 666
+      console.log(win);
+      console.log(win);
+    }(window.fnspace = window.fnspace || {}))
+    console.log(window);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // new Promise((resolve, reject) => {
+      //   throw new Error('fail')
+      // }).catch((err) => {
+      //   console.log(err)
+      // })
+      const userList = [
+        {
+          name: 'longlong',
+          age: 12,
+          gender: '男',
+          hobby: 'play basketball'
+        },
+        {
+          name: 'xuxu',
+          age: 124,
+          gender: '男',
+          hobby: 'play basketball'
+        },
+        {
+          name: 'ruirui',
+          age: 152,
+          gender: '女',
+          hobby: 'play basketball'
+        },
+        {
+          name: 'yiyi',
+          age: 125,
+          gender: '男',
+          hobby: 'play basketball'
+        },
+        {
+          name: 'haha',
+          age: 122,
+          gender: '男',
+          hobby: 'play basketball'
+        }
+      ]
+      // 模拟请求数据
+      function query(name) {
+        if (!userList.find((item) => item.name === name)) {
+          throw new Error('未找到相应内容')
+        }
+        let searchCon = userList.filter((item) => {
+          return item.name === name
+        })
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve(...searchCon)
+          }, 1000)
+        })
+      }
+      async function hd(name) {
+        try {
+          let user = await query(name)
+          // let user1 = await query('name')
+          // console.log(user)
+          return user
+        } catch (error) {
+          alert(error.message)
+        }
+      }
+      let input = prompt()
+      hd(input).then((res) => {
+        console.log(res)
+      })
+    </script>
+  </body>
+</html>

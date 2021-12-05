@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // console.log(a);
+        // var a = 2;
+        // 1 let 声明变量 没有变量提升
+        // let a = 10;
+        // console.log(a);
+
+        // 2 是一个块级作用域
+        // if (1 === 1) {
+        //     let b = 10;
+        // }
+        // console.log(b);
+
+        // 3 不能重复声明
+
+        // let a = 10;
+        // let a = 11;
+        // const 声明常量 一旦被声明 不允许被修改
+        // const max = 10;
+        // max = 40; 
+        // const max = 10;
+        // console.log(max);
+        const person = {
+            name: '小马哥'
+        }
+        person.name = 'alex';
+        console.log(person);
+
+        // 作用2：不会渲染全局变量
+        let RegExp = 10;
+        console.log(RegExp);
+        console.log(window.RegExp);
+
+        // 建议：在默认情况下用从const，而只有在你知道变量值需要被修改的时候使用let
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 对象可以使用父一级的功能
+      let hd = {
+        data: [1, 2, 4, 15, 6, 7]
+      }
+      let ss = {
+        data: [1, 2, 15, 4, 5]
+      }
+      // 给hd设置一个原型对象
+      Object.setPrototypeOf(ss, hd)
+      Object.setPrototypeOf(hd, {
+        max() {
+          return this.data.sort((a, b) => b - a)[0]
+        }
+      })
+      console.log(hd.max())
+      console.log(ss.max())
+      console.log(hd)
+
+      let xj = {
+        lessons: {
+          js: 87,
+          php: 63,
+          linux: 88
+        },
+        get data() {
+          return Object.values(this.lessons)
+        }
+      }
+      hd.max.apply(xj)
+    </script>
+  </body>
+</html>

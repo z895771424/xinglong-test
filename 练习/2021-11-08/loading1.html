@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 100%;
+    }
+
+    /* display,align-items,justify-content 这三个属性是为了将 i 标签中的内容放置在 div 的中部。 首先利用 display 属性将div 设置成弹性盒子元素，然后利用 align-items 设置元素在纵轴上居中，justify-content 设置元素在横轴上居中。*/
+    .loading4 {
+      width: 30%;
+      height: 250px;
+      border: 1px solid #11CD6E;
+      box-sizing: border-box;
+      margin: 50px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .loader4 {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 1px solid #BBBABA;
+      position: relative;
+      border-width: 4px;
+    }
+
+    .loader4:before {
+      width: 35px;
+      height: 4px;
+      top: 50%;
+      left: 50%;
+      position: absolute;
+      content: "";
+      border-radius: 4px;
+      background-color: #BBBABA;
+      transform-origin: 2px 2px 0;
+      -webkit-animation: before 10s linear 0s infinite;
+    }
+
+    .loader4:after {
+      width: 45px;
+      height: 5px;
+      top: 50%;
+      left: 50%;
+      position: absolute;
+      content: "";
+      background-color: #BBBABA;
+      transform-origin: 2px 2px 0;
+      -webkit-animation: after 2s linear 0s infinite;
+      border-radius: 4px;
+    }
+
+    @-webkit-keyframes before {
+      0% {
+        transform: rotate(0);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @-webkit-keyframes after {
+      0% {
+        transform: rotate(0);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="loading4">
+      <div class="loader4"> </div>
+    </div>
+  </div>
+</body>
+
+</html>

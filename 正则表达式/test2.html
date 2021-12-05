@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .wrong {
+      color: red;
+      font-size: 15px
+    }
+
+    .right {
+      color: green;
+      font-size: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="text" id="cipt"> <span>请输入用户名</span>
+  <script>
+    let ipt = document.querySelector('#cipt')
+    let span = document.querySelector('span')
+    // 必须以字母与，特殊字符开头，以8-16位数字结尾
+    let reg = /^[a-z1-9A-Z_!@#$%^&*()][1-9]{8,16}$/
+    let show = () => {
+      console.log(this)
+      if (reg.test(ipt.value)) {
+        span.className = 'right'
+        span.innerHTML = '验证通过'
+      } else {
+        span.className = 'wrong'
+        span.innerHTML = '输入格式有误'
+      }
+    }
+    // 箭头函数必须写在调用者上面
+    ipt.addEventListener('blur', show)
+    // function show() {
+    //   console.log(this)
+    //   this.innerHtml = '22222'
+    // }
+  </script>
+</body>
+
+</html>

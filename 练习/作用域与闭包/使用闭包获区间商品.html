@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let arr = [1, 3, 3, 4, 5, 5, 66]
+    // let hd = arr.filter((item) => item >= 2 && item <= 9)
+    // console.log(hd)
+
+    function between(a, b) {
+      return function (v) {
+        // 函数内部访问到了函数外部的变量
+        return v >= a && v <= b
+      }
+    }
+    console.log(arr.filter(between(3, 4)))
+  </script>
+</html>

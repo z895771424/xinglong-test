@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // let hd = {};
+    // console.log(hd);
+    // 函数也是对象
+    // function User () {};
+    // // console.log(object)
+    // User.prototype.show = function() {
+    //   console.log('隆隆');
+    // }
+    // let hd = new User();
+    // hd.show();
+    // console.dir(User)
+    // console.log(User.prototype === hd.__proto__)
+
+    function User(){};
+    User.__proto__.view = function() {
+      console.log('User function view method');
+    }
+    User.view();
+  </script>
+</body>
+</html>

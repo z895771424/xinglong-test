@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function Star(uname, age) {
+      this.uname = uname;
+      this.age = age;
+      // this.sing = function () {
+      //   console.log('我会唱歌');
+      // }
+    }
+    Star.prototype.sing = function () {
+      console.log('我会唱歌');
+    }
+    const ldh = new Star('张学友', 18);
+    const zxy = new Star('刘德华', 98);
+    console.log(ldh.sing === zxy.sing); // true 他们指向的是同一个地址
+    // ldh.sing()
+    console.dir(Star)
+    // 一般情况下，我们的公共属性定义到构造函数里面，公共的方法我们放到原型对象身上
+    // 我们可以把一些不变的方法，直接定义在prototype对象上,这样所有对象的实例就可以共享这些方法
+  </script>
+</body>
+
+</html>

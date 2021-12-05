@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>asc</button>
+    <button>desc</button>
+    <script>
+      let arr = [
+        {
+          title: '媒体',
+          click: 78,
+          price: 55
+        },
+        {
+          title: 'grid',
+          click: 44,
+          price: 85
+        },
+        {
+          title: 'flex',
+          click: 57,
+          price: 47
+        },
+        {
+          title: '盒子',
+          click: 76,
+          price: 83
+        },
+        {
+          title: 'vss',
+          click: 47,
+          price: 11
+        },
+        {
+          title: 'Html',
+          click: 80,
+          price: 188
+        }
+      ]
+      let btns = document.querySelectorAll('button')
+      btns[0].onclick = function () {
+        let newArr = arr.sort(selectSortType('price', this.innerHTML))
+        console.log(newArr)
+      }
+      btns[1].onclick = function () {
+        let newArr = arr.sort(selectSortType('price', this.innerHTML))
+        console.log(newArr)
+      }
+
+      function selectSortType(field, type = 'asc') {
+        return function (a, b) {
+          if (type === 'asc') return a[field] > b[field] ? 1 : -1
+          return a[field] > b[field] ? -1 : 1
+        }
+      }
+
+      // 动态按照点击 和 价格排序
+      // console.log(newArr)
+    </script>
+  </body>
+</html>

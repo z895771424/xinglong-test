@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let a = {}
+      let b = {}
+      let c = {}
+      Object.setPrototypeOf(a, b) // 把b对象设置为a对象的原型
+      // 一个对象是否在一个对象的原型链上
+      // console.log(b.isPrototypeOf(a))
+      // console.dir(b.__proto__.isPrototypeOf(a))
+      console.log(b.isPrototypeOf(a)) // 检测某一个对象你是不是另一个对象的长辈
+    </script>
+  </body>
+</html>

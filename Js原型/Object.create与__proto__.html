@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let user = {
+        name: 'user',
+        show() {
+          return this.name
+        }
+      }
+      // // hd 对象，继承了user对象的属性和方法
+      // // 定义对象的原型，获取
+      // let hd = Object.create(user, {
+      //   name: {
+      //     value: '后盾人'
+      //   }
+      // })
+      // hd.name = 'hdName'
+      // console.log(hd.name) // 对象中有自己的属性，优先使用自己的，自己没有，从原型中查找
+      let hd = { name: 'haha' } // 优先使用自己的属性
+
+      hd.__proto__ = user
+      console.log(hd.show())
+    </script>
+  </body>
+</html>

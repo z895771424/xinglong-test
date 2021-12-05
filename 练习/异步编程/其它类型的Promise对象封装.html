@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      new Promise((resolve, reject) => {
+        resolve('longlong')
+      })
+        .then(
+          (value) => {
+            // class Hd {
+            //   then(resolve, reject) {
+            //     setTimeout(() => {
+            //       resolve('这是类')
+            //     }, 2000)
+            //   }
+            // }
+            // return new Hd()
+            // return {
+            // 只要对象中有then方法，就可返回异步Promise
+            // then(resolve, reject) {
+            //   setTimeout(() => {
+            //     resolve('这是对象')
+            //   }, 2000)
+            // }
+
+            // }
+
+            return class {
+              static then(resolve, reject) {
+                // resolve('这是一个静态方法')
+                reject('失败')
+              }
+            }
+          },
+          (season) => {}
+        )
+        .then(
+          (value) => {
+            console.log(value)
+          },
+          (reason) => {
+            console.log(reason)
+          }
+        )
+    </script>
+  </body>
+</html>

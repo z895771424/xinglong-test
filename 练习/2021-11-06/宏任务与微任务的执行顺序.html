@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      new Promise((resolve) => {
+        console.log('promise');
+        resolve('旭旭宝宝');
+      }).then((value) => {
+        // 会把这个加到微任务里面
+        // 这是微任务轮询后出来的结果
+        console.log(value);
+      });
+      console.log('longlong');
+    </script>
+  </body>
+</html>

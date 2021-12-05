@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jQuery.js"></script>
+</head>
+
+<body>
+    <script>
+        var p = new Promise(function(resolve, reject) {
+                // 异步操作
+                // setTimeout(function() {
+                //     reject(); //成功
+                // }, 3000);
+                setTimeout(function() {
+                    resolve('hello word');
+                }, 1000)
+                setTimeout(function() {
+                    reject('你好');
+                }, 2000);
+            })
+            // 通过痛恨指定回调
+        p.then(function(data) {
+            console.log('请求成功', data);
+        }, function(data) {
+            console.log('请求失败', data);
+        })
+
+        p.then(function() {
+            console.log('请求库存');
+        }).then(function() {
+            console.log('请求部署');
+        }).then(function() {
+            console.log('支付');
+        }).then(function() {
+            console.log('发货');
+        })
+    </script>
+</body>
+
+</html>

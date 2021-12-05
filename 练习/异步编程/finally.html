@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        color: white;
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>loading ...</div>
+    <script>
+      const div = document.querySelector('div')
+      const promise = new Promise((resolve, reject) => {
+        // resolve('hdcms')
+        div.style.display = 'block'
+        reject('失败')
+      })
+        .then((msg) => {
+          console.log('resolve')
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+        .finally(() => {
+          console.log('永远会执行')
+          div.style.display = 'none'
+        })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function Star(uname, age) {
+      this.uname = uname;
+      this.age = age;
+    }
+    Star.prototype.sing = function () {
+      console.log('我会唱歌');
+    }
+    // Star.prototype.sex = '女';
+    // Object.prototype.sex = '男'
+    Object.prototype.console = () => {
+      console.log('哈哈，笑死我了');
+    }
+    const arr = {}
+    arr.console();
+    // const ldh = new Star('刘德华',18);
+    // console.log(ldh.sex);
+    let arr1 = [1, 2, 3, 4];
+    const res = arr1.sort((a, b) => b - a);
+
+
+    
+    console.log(res);
+  </script>
+</body>
+
+</html>

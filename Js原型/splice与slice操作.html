@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr = [1, 2, 3, 45, 34]
+      arr.splice(1, 0, '浏览', '123')
+      // console.table(arr.slice(1)) // 从1下标开始，截取后面的所有元素
+
+      // console.log(arr.splice(0, 2)) // 从0开始截取两个 会改变原数组
+
+      // let hd = arr.splice(0, 3, 'hdcms', 'hdcms', 'hdcms', 'hdcms', 'hdcms')
+      // let hd = arr.splice(1, 2, 'long')
+      // console.table(hd)
+      // arr.splice(1, 1)
+      console.table(arr)
+    </script>
+  </body>
+</html>

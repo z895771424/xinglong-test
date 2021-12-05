@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // let arr = ['longlong'];
+    // console.log(arr.concat('longlong'))
+    let hd = {};
+    // console.log(hd);
+    // 获取 hd 的父亲
+    console.log(Object.getPrototypeOf(hd));
+    let xj = {}
+    // 获取 xj 的父亲
+    console.log(Object.getPrototypeOf(xj) ===Object.getPrototypeOf(hd))
+    console.log(hd)
+  </script>
+</body>
+</html>

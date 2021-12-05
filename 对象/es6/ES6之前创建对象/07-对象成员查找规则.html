@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=  , initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Star(uname, age) {
+            this.uname = uname;
+            this.age = age;
+        }
+        Star.prototype.sing = function() {
+                console.log('我会唱歌');
+            }
+            // 构造函数通过原型分配的函数是所有对象所共享的
+        Star.prototype.sex = '女';
+
+        var ldh = new Star('刘德华', 18);
+        ldh.sex = '男';
+        console.log(ldh.sex);
+        console.log(Object.prototype);
+        console.log(ldh.toString());
+    </script>
+</body>
+
+</html>

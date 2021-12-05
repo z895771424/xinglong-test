@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jQuery.js"></script>
+</head>
+
+<body>
+    <script>
+        // Ajax
+        // $.ajax({
+        //     url: 'data1.json',
+        //     success: function(data) {
+        //         console.log(data);
+        //     }
+        // });
+        let p = new Promise(function(resolve, reject) {
+            console.log(typeof resolve);
+            $.ajax({
+                url: 'data1.json',
+                success: function() {
+                    // 调用成功方法
+                }
+            })
+        });
+        p.then(function() {
+            console.log('请求成功 ');
+        })
+    </script>
+</body>
+
+</html>

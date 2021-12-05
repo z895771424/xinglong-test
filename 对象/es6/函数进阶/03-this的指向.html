@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 函数的调用方式
+
+        // 1 普通函数
+        function fn() {
+            console.log('普通函数的this' + this);
+        }
+        window.fn()
+            // 2 对象方法 this 指向的是对象 o
+        var o = {
+            sayHi: function() {
+                console.log('人生的巅峰' + this);
+            }
+        }
+        o.sayHi();
+        // // 3 构造函数 this 指向 ldh 这个实例对象
+        function Stay() {
+            Star.prototype.sing = function() {
+
+            }
+        }
+        var ldh = new Star();
+        // 4 绑定事件函数 this 指向的是调用者 btn这个按钮都西昂
+        // btn.onclick = function() {
+        //         console.log('绑定事件函数的this:' + this);
+        //     } // 点击了按钮就可以调用这个函数
+
+        // 5 定时器函数 this 指向的是window
+        window.setInterval(function() {}, 1000); // 这个函数是定时器自动一秒钟调用一次
+        // 6 立即执行函数 this 指向的是window 
+        (function() {
+            console.log('人生巅峰');
+        })()
+        // 立即执行函数是自动调用的
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let a = { url: 'lll.com' }
+      let b = { name: 'longlng.com' }
+      // Object.prototype.web = 'longlong.obj.com'
+      // console.log('web' in a) // a对象上是否有a属性
+      Object.setPrototypeOf(a, b) // b 对象成为了 a对象的原型
+      // console.log(web in a)
+
+      // 它只是单纯的检测对象，不会检测原型的中的属性
+      // console.log(a.hasOwnProperty('name'))
+      for (const key in a) {
+        // console.log(key) // 这里会遍历原型属性上的内容
+        if (a.hasOwnProperty(key)) {
+          console.log(key) // 这里的话排除了原型对象上存在的属性，只遍历这个对象上的纯属性
+        }
+      }
+    </script>
+  </body>
+</html>

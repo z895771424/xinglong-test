@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button message="隆隆" class="red">按钮1</button>
+    <button message="隆隆123">dddd</button>
+    <script>
+      let arr = [1, 3, 45]
+      let res = arr.filter((item) => item > 39)
+      // console.log(res)
+      let btns = document.querySelectorAll('button')
+      // console.log(btns.filter)
+      console.log(typeof btns)
+      // 这里用户call 是因为它返回的filter返回的是一个一个的值，而不是
+      // 一个数组，如果为数组，则使用apply
+      btns = Array.prototype.filter.call(btns, (item) => {
+        return item.hasAttribute('class') // 循环到的该标签是否包含该属性
+      })
+
+      // Array.prototype.filter.call(btns,item)
+      console.log(btns)
+    </script>
+  </body>
+</html>

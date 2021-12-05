@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 500px;
+            height: 500px;
+            background-color: skyblue;
+            margin: 0 auto;
+            padding-top: 20px;
+            box-sizing: border-box;
+        }
+        
+        table {
+            box-sizing: border-box;
+            margin: 100px auto;
+            border: 1px solid black;
+            /* 这个边框合并标签是给父元素添加的 */
+            border-collapse: collapse;
+        }
+        
+        table td {
+            width: 100px;
+            height: 30px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div class="search">
+            按照价格查询：<input type="text"> - <input type="text"><button>搜索</button><br>按照商品名称查询：<input type="text"> <button>查询</button>
+        </div>
+        <table>
+            <thead>
+                <td>id</td>
+                <td>产品名称</td>
+                <td>价格</td>
+                <tbody>
+
+                </tbody>
+        </table>
+    </div>
+    <script>
+        var data = [{
+            id: 0,
+            pname: '小米',
+            price: 1999
+        }, {
+            id: 1,
+            pname: '苹果',
+            price: 4599
+        }, {
+            id: 3,
+            pname: '华为',
+            price: 4399
+        }, {
+            id: 4,
+            pname: 'oppo',
+            price: 1121
+        }, ];
+
+        // 1 获取相应元素怒
+        var tbody = document.querySelector('tbody');
+        // 2 把数据渲染到页面上
+        setDate(data);
+
+        function setDate(mydata) {
+            // 先清空原来tbody里面的数据
+            tbody.innerHTML = '';
+            mydata.forEach(function(value) {
+                // 获取到数组的值和下标
+                var tr = document.createElement('tr');
+                tr.innerHTML = '<td>' + value.id + '</td><td>' + value.pname + '</td><td>' + value.price + '</td>';
+                tbody.appendChild(tr);
+            })
+        }
+        // 按照价格查询
+        var input = document.querySelector('.search').querySelectorAll('input');
+        var sear = document.querySelectorAll('button');
+        sear[0].onclick = function() {
+            var num1 = input[0].value;
+            var num2 = input[1].value;
+            // 返回一个新数组 直接返回一个新数组
+            var newDate = data.filter(function(value) {
+                return value.price >= num1 && value.price <= num2;
+            })
+            setDate(newDate)
+        }
+        sear[1].onclick = function() {
+            var num3 = input[2].value;
+            var arr = [];
+            // 查找唯一下标元素，使用some
+            var newData1 = data.some(function(value) {
+                // some效率特别高
+                if (value.pname === num3) {
+                    // 此时得到的是一个对象
+                    // 得将对象转化为数组
+                    console.log(value);
+                    arr.push(value);
+                    return true; // return 后面必须写true
+                }
+            });
+            setDate(arr)
+        }
+    </script>
+</body>
+
+</html>

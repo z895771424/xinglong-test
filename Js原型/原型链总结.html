@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // let arr = [] // new Array
+      // console.log(arr.__proto__.__proto__ === Object.prototype)
+
+      let a = {}
+      let b = {
+        name: 'b',
+        show1() {
+          console.log('dkdkddkd')
+        }
+      }
+      Object.setPrototypeOf(a, b) // 把a的父亲设置为b
+      Object.prototype.show = function () {
+        console.log('longlong')
+      }
+      // a.show()
+      // 思想：把一些公共的东西写到父级里面，让自己好用
+      // 当b设置方法的时候，a也可以访问到，因为b是a的叔叔
+      a.show1()
+    </script>
+  </body>
+</html>

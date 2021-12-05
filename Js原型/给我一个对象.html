@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function User(name) {
+        this.name = name
+      }
+      let hd = new User('后盾人')
+      console.dir(Object.getPrototypeOf(User))
+      function createByObject(obj, ...args) {
+        const constructor = Object.getPrototypeOf(obj).constructor
+        console.log(constructor === User)
+        return new constructor(...args)
+      }
+      let xj = createByObject(hd, 'longlng')
+    </script>
+  </body>
+</html>

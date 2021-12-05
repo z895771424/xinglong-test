@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+</head>
+
+<body>
+    <script>
+        // 1 我们可以利用动态添加属性的方式
+        var lis = document.querySelector('ul').querySelectorAll('li');
+        // for (var i = 0; i < lis.length; i++) {
+        //     lis[i].ind = i;
+        //     lis[i].onclick = function() {
+        //         console.log(this.ind);
+        //     }
+        // }
+        // 2 利用闭包的方式得到当前li索引号
+        for (var i = 0; i < lis.length; i++) {
+            // 利用for循环创建了4个立即执行函数
+            // 立即执行函数也称为小闭包 因为立即执行函数里面的任何一个函数都可以使用它的i这个变量
+            (function(i) {
+                // console.log(i);
+                lis[i].onclick = function() {
+                    console.log(i);
+                }
+            }(i))
+        }
+    </script>
+</body>
+
+</html>

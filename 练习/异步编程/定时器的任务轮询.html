@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        position: absolute;
+        top: 0;
+        left: 10;
+        width: 200px;
+        height: 200px;
+        background-color: skyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <script>
+      // 封装一个定时器函数
+      function interval(callback, delay = 100) {
+        let timer = setInterval(() => callback(timer), delay)
+      }
+
+      // interval(function (timer) {
+      //   console.log(timer)
+      // }, 1000)
+
+      // 定时器事件到了之后，且主进程任务执行完成之后，将定时器中的函数放到主任务队列中
+      interval((timeId) => {
+        const div = document.querySelector('div')
+        let left = parseInt(window.getComputedStyle(div).left)
+        div.style.left = left + 10 + 'px'
+        if (left >= 200) {
+          clearInterval(timeId)
+          interval((timeId1) => {
+            let width = parseInt(window.getComputedStyle(div).width)
+            div.style.width = width - 10 + 'px'
+            if (width <= 20) {
+              clearInterval(timeId1)
+            }
+          })
+        }
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 30px;
+            background-color: blue;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div>section</div>
+    <script>
+        var div = document.querySelector('div');
+        setInterval(() => {
+            var box = document.createElement('div');
+            box.innerHTML = '你好，隆隆';
+            box.style.width = '100px'
+            box.style.height = '20px'
+            box.style.backgroundColor = 'pink'
+
+            div.appendChild(box);
+
+        }, 1000);
+    </script>
+</body>
+
+</html>

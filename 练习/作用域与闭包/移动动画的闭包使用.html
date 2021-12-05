@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button {
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <button message="longlong">按钮1</button>
+    <button message="asdfasd">按钮2</button>
+  </body>
+  <script>
+    let btns = document.querySelectorAll('button')
+    btns.forEach((item) => {
+      // parent
+      let left = 1
+      let interval = false
+      item.addEventListener('click', () => {
+        // 相当于添加了一个标志，只能使定时器执行一次
+        if (!interval) {
+          interval = true
+          setInterval(() => {
+            item.style.left = left++ + 'px'
+          }, 100)
+        }
+        // 只要执行一次，就会产生一个环境（内存区域）
+
+        // console.log(left)
+      })
+    })
+  </script>
+</html>

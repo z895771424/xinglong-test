@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.1/dist/vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    {{message}}
+    <ul>
+      <li v-for="item in list">{{item.name}}</li>
+    </ul>
+    {{1 | setGender}}
+    <!-- <div :id="row | hh1"></div> -->
+
+    <div :id="'row' | hh1"></div>
+    <button @click="show">button</button>
+  </div>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: 'hello vue',
+        list: [{
+          name: 'longlong0',
+          age: 12
+        }, {
+          name: 'longlong1',
+          age: 12
+        }, {
+          name: 'longlong2',
+          age: 12
+        }, {
+          name: 'longlong3',
+          age: 12
+        }, ]
+      },
+      methods: {
+        show() {
+          console.log(123)
+          this.list = [{
+            name: 'xuxux'
+          }]
+        }
+      },
+      filters: {
+        setGender(par) {
+          if (!par) return;
+          if (par === 0) {
+            return '男';
+          } else {
+            return '女';
+          }
+        
+        },
+        hh1(row) {
+          console.log(row)
+          return 123;
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="fa"></div>
+    <script>
+      // String Number Object
+      let hd = new Object()
+      hd.name = 'longlong'
+      // console.dir(Object) // 现在打印的是构造函数
+      Object.prototype.show = function () {
+        console.log('longol.com')
+      }
+      hd.show()
+
+      function User() {}
+      // console.dir(User)
+      // console.log(User.prototype.__proto__ === User.__proto__.__proto__)
+      console.dir(Object.prototype.__proto__) // null
+      let xj = new User()
+      xj.show()
+    </script>
+  </body>
+</html>

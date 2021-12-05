@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 对象原型 __proto__
+    // 对象都会有一个原型__proto__指向构造函数的prototype原型对象，之所以我们对象可以使用构造函数prototype原型对象的属性和方法，就是因为对象有__proto__原型的存在
+    function Star(uname, age) {
+      this.uname = uname;
+      this.age = age;
+      // this.sing = function () {
+      //   console.log('我会唱歌');
+      // }
+    }
+    Star.prototype.sing = function () {
+      console.log('我会唱歌');
+    }
+    const ldh = new Star('张学友', 18);
+    const zxy = new Star('刘德华', 98);
+    // console.log(ldh.sing === zxy.sing); // true 他们指向的是同一个地址
+    // ldh.sing()
+    // console.dir(Star)
+    // 一般情况下，我们的公共属性定义到构造函数里面，公共的方法我们放到原型对象身上
+    // 我们可以把一些不变的方法，直接定义在prototype对象上,这样所有对象的实例就可以共享这些方法
+    // console.log(ldh.__proto__); // 对象身上系统自动自己添加一个 __proto__ 指向问哦们构造函数的原型对象
+    // console.log(Star.prototype);
+    // console.log(ldh.__proto__ === Star.prototype); // true 
+    // console.log(Star.prototype.constructor);
+    // console.log(ldh.__proto__.constructor);
+    // console.log(Star.prototype.__proto__ === Object.prototype);
+    // console.log(Object.prototype);
+
+    // constructor 主要用于记录该对象应用于那个构造函数，它可以让原型对象重新指向原来的构造函数
+
+    // 很多情况下我们需要手动的录用constructor 函数
+
+    // 最顶层的对象
+    console.log(Object.prototype.__proto__);
+  </script>
+</body>
+
+</html>

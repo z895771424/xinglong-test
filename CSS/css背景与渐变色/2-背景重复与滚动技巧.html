@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      article {
+        height: 500px;
+        border: dashed 10px black;
+        /* 平均分配 */
+        /* background-repeat: space; */
+        overflow: auto;
+      }
+
+      div {
+        height: 3000px;
+        background-image: url('./Snipaste_2021-09-27_17-36-11.png');
+        /* 背景图片固定 */
+        background-attachment: fixed;
+      }
+    </style>
+  </head>
+  <body>
+    <article>
+      <div>longlogn.com</div>
+      、、
+      <!-- <script>
+        let article = document.querySelector('article')
+        let span = document.querySelector('span')
+        let flag = true
+        let i = 0
+        setInterval(() => {
+          i++
+          // console.log(i)
+          span.innerHTML += i
+          let br = span.innerHTML.length
+          if (br >= 70) {
+            console.log(213)
+            span.innerHTML += '<br/>'
+          }
+          if (flag) {
+            flag = false
+            article.style.borderStyle = 'solid'
+          } else {
+            flag = true
+            article.style.borderStyle = 'dashed'
+          }
+        }, 50)
+      </script> -->
+    </article>
+  </body>
+</html>

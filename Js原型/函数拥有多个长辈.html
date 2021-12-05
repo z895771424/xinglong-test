@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 函数也是对象
+      function User() {}
+      User.__proto__.view = function () {
+        console.log('User Function view method')
+      }
+      User.view()
+      // console.dir(User)
+      // // console.log(object)
+      // // 函数对象有两个长辈
+      // User.prototype.show = function () { // 服务于函数实例化后的对象
+      //   console.log('longlong')
+      // }
+      // let hd = new User()
+      // // 构造函数和对象指向的是一个原型
+      // hd.show()
+      // console.log(User.prototype === hd.__proto__) // true
+    </script>
+  </body>
+</html>

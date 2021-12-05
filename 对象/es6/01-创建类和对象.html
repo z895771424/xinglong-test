@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Star {
+            constructor(uname, age) {
+                this.uname = uname;
+                this.age = age;
+            }
+            say(song) {
+                // 类里面所有的函数不需要写function
+                console.log(this.uname + song);
+            }
+        }
+
+        var ldh = new Star('刘德华', 20);
+        var zxy = new Star('张学友', 30)
+        console.log(ldh.uname, ldh.age);
+        ldh.say('冰雨');
+        // constructor函数，可以接收传递过来的参数，同时返回实例对象
+        // constructor函数 只要new生成实例时，就会自动调用这个函数，如果问哦们不写这个函数，类也会生成这个函数
+    </script>
+</body>
+
+</html>

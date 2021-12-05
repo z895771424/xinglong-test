@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr = [1, 2, 3, 44, 5]
+
+      // 对象可以使用父一级的功能
+      let hd = {
+        data: [1, 2, 4, 15, 6, 7]
+      }
+      // call 传的是一个整体，apply传的是一个数里面的每一个值
+      console.log(Math.max.call(null, ...hd.data))
+      let xj = {
+        lessons: {
+          js: 87,
+          php: 63,
+          linux: 88
+        }
+      }
+      console.log(Math.max.apply(null, Object.values(xj.lessons)))
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let hd = {
+      show() {
+        console.log('123')
+      },
+      // 自己有方法就用自己的方法
+      render() {
+        console.log('我是对象自己的方法')
+      }
+    };
+    hd.__proto__.render = function() {
+      console.log('123123')
+    }
+    // console.dir(hd.render());
+    console.log(hd)
+    hd.render();
+  </script>
+</body>
+</html>

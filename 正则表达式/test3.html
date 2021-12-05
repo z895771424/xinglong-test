@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 座机号码验证
+    // 正则里面的 | 是或者的意思
+    // let reg = /^\d{3}-\d{8}|\d{4}-\d{7}$/
+    // replace() 方法可以实现替换字符串操作
+    // 他会赋值出来一个新的字符串
+    let str = 'AASDXXX'
+    let newStr = str.replace('和', 'baby')
+    // 所以想要替换里面的很多字符，需要用到正则表达式
+    // 全局 忽略大小写··
+    let newStrExp = str.replace(/[a|d|x]/gi, '龙老公')
+    console.log(newStrExp)
+  </script>
+</body>
+
+</html>

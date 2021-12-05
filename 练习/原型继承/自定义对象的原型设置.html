@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let hd = {name:'hd'};
+    let parent = {name:'paret',show(){
+      console.log(this.name)
+      console.log('father')
+    }};
+    Object.setPrototypeOf(hd, parent);
+    // hd.show();
+    // parent.show()
+    // console.log(hd);
+    
+    // 查看对象的父级原型 
+    console.log(Object.getPrototypeOf(hd))
+  </script>
+</body>
+
+</html>

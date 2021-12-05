@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // ES6之前通过 构造函数 + 原型实现面向对象 编程
+
+        // ES6 通过 类 实现面向对象编程
+
+        // ES6 其实就是语法糖
+        class Star {
+
+        }
+        console.log(typeof Star);
+        // 1 类的本质是函数 我们也可以简单地认为 类就是 构造函数的另外一种写法
+        // 类有原型对象prototype
+        console.log(Star.prototype);
+        console.log(Star.prototype.constructor);
+        Star.prototype.sing = function() {
+            console.log('冰雨');
+        }
+        var ldh = new Star();
+        console.log(ldh);
+        // 类创建的实例对象有__proto__ 原型指向 类的原型对象
+        console.log(ldh.__proto__ == Star.prototype);
+    </script>
+</body>
+
+</html>

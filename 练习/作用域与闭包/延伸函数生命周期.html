@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function hd() {
+        let n = 1
+        return function () {
+          // 返回给外部，可以保证这块空间一直有
+          // console.log(++n)
+          let m = 1
+          return function show() {
+            console.log('n' + ++n)
+            console.log('m' + ++m)
+          }
+          show()
+        }
+        // sum()
+      }
+      let a = hd()
+      let b = a()
+      b()
+      b()
+      b()
+      // let b = hd()
+      // b()
+      // b()
+      // let c = hd()
+      // c()
+    </script>
+  </body>
+</html>

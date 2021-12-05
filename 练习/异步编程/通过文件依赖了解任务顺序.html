@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="./long.js"></script>
+    <script>
+      show()
+      function load(src, resolve) {
+        let script = document.createElement('script')
+        script.src = src
+        // 加载成功之后执行回调函数
+        script.onload = resolve
+        document.body.appendChild(script)
+      }
+      // 他俩的执行顺序是随机的
+      load('./hd.js', () => {
+        hd()
+      })
+      load('./hd2.js', () => {
+        hdr()
+      })
+      console.log(123123)
+    </script>
+  </body>
+</html>

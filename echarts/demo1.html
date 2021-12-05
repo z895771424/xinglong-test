@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./echarts.js"></script>
+</head>
+
+<body>
+  <!-- 绘制一个简单的图表 -->
+  <!-- 在绘制前我们需要Echarts准备一个定义了高度DOM容器 -->
+  <main style="width: 100%;height: 400px;"></main>
+  <script>
+    // 基于准备好的dom，初始化echarts实例
+    const myChart = echarts.init(document.querySelector('main'));
+    // 指定图标的配置项
+    const option = {
+      title: {
+        text: 'Echarts 入门实例'
+      },
+      tooltip: {},
+      legend: {
+        data: ['销量']
+      },
+      xAxis: {
+        data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
+      },
+      yAxis: {},
+      series: [{
+        name: '销量',
+        type: 'bar',
+        data: [5, 20, 36, 10, 10, 20]
+      }]
+    }
+    // 使用刚指定配置的配置项和数据显示项目
+    myChart.setOption(option);
+    // 动态改变图标大小
+    window.onresize = function () {
+      // myChart.resize();
+      // 除了直接调用resize() 不含参数的形式之外，还可以指定高度和宽度，实现图标大小不等于容器大小的效果
+      myChart.resize({
+        width: 400,
+        height: 400
+      })
+    }
+    
+    /**
+     * 本质上，由于图标的容器节点被移除，即使之后该节点被重新添加，图标所在的节点已经不存在了。
+     * 正确的做法是，在图标容器被销毁之后，调用 echartsInstance.dispose 销毁实例，在图标容器重新被添加后在再次调用charts.init初始化
+     * 避免内存泄漏
+    */
+  </script>
+</body>
+
+</html>

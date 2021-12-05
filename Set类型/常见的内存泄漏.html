@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="someElement"></div>
+  <script>
+    function assignHandler() {
+      const element = document.getElementById('someElement');
+      element.onclick = function() {
+        console.log(element.id);
+      }
+    }
+    // 以上代码创建了一个作为element 元素时间处理程序的闭包，而这个闭包则有创建了一个循环的引用，匿名函数中保存了对element对象的引用，因此无法减少element的引用数量
+    // 只要匿名函数在，element的引用数至少是1，因此它所占用的内存就永远无法回收
+
+    // 解决方法
+    function assignHandler() {
+      const element = document.getElementById('someElement');
+      const id = element.id
+      element.onclick = function() {
+        console.log(id)
+      }
+      element = null;
+    }
+  </script>
+</body>
+</html>

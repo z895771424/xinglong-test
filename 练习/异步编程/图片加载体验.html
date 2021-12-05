@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // function resolve() {
+    //   console.log(123)
+    // }
+    // function reject() {
+    //   console.log(3343)
+    // }
+    // 这里面是异步任务
+    function loading(src, resolve, reject) {
+      let image = new Image()
+      image.src = src
+      image.onload = () => {
+        resolve(image)
+      }
+      image.onerror = reject
+    }
+
+    loading(
+      'http://n.sinaimg.cn/photo/700/w1000h500/20210603/57a6-kracxep9657657.png',
+      (image) => {
+        document.body.appendChild(image)
+      },
+      () => {
+        console.log('图片加载失败')
+      }
+    )
+    // 它是在图片加载前执行的
+    console.log('我先执行')
+  </script>
+</html>

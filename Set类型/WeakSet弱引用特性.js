@@ -1,0 +1,36 @@
+// let set = new WeakSet(['longlong','lonlgong']);
+
+// let set = new WeakSet();
+// set.add(['longlong', 'xuxu']);
+// console.log(set)
+
+
+// let a = 1;
+// let b = a;
+// a = 2
+// console.log(b)
+
+/**
+ * 引用类型里面有引用计数器
+ */
+
+let hd = { name: 'longlong', age: 12 };
+let edu = hd;
+
+let set = new WeakSet();
+set.add(hd);
+
+hd = null;
+edu = null;
+console.log(set);
+
+console.log(set.size);
+
+setTimeout(() => {
+  console.log(set)
+}, 2000)
+
+/**
+ * 内存泄漏是指当一块内存不再被应用程序使用的时候，由于某种原因，这块内存没有返还操作系统或者内存池的现象
+ * 内存泄漏可能会导致应用程序卡顿或者崩溃
+ */

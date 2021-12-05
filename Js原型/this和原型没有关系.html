@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // this
+      let hd = {
+        name: 'longlon',
+        show() {
+          console.log(this.name)
+        }
+      }
+      let User = {
+        name: '隆隆'
+      }
+      Object.setPrototypeOf(hd, User)
+      // 原型与对象没有关系
+      console.log(hd.show())
+    </script>
+  </body>
+</html>

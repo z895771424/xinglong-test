@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let hd = {name:'厚度人'};
+    // let cms = hd;
+    // hd.name = 'xuxu';
+    // cms = null;
+    // 引用计数器没人使用了，就变成了垃圾
+    // console.log(cms)
+    let map = new WeakMap();
+    // 他不会改变引用计数器
+    map.set(hd,'houdunren.com');
+    hd = null;
+    // console.log(map)
+    setTimeout(()=>{
+      console.log(map)
+    },5000)
+
+  </script>
+</body>
+</html>

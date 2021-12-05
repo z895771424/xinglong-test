@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function load(src, resolve) {
+        const script = document.createElement('script');
+        script.src = src;
+        script.onload = resolve;
+        document.body.appendChild(script);
+      }
+      load('./1.js', () => {
+        hd();
+        load('./2.js', () => {
+        hd1();
+      });
+      });
+      
+      console.log(123);
+      // 等主进程加载完成之后，再开始循环队列
+      // for (let i = 0; i <= 1000; i++) {
+      //   console.log(i);
+      // }
+    </script>
+  </body>
+</html>

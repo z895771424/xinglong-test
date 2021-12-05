@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        // 数组结构允许我们按照一一对应的关系从数组中提取值然后将值赋给变量
+        let ary = [1, 2, 3]
+        let [a, b, c, d, e] = ary;
+        console.log(a);
+        console.log(b);
+        console.log(c);
+        console.log(d);
+        console.log(e);
+        // 如果解构不成功，变量的值为undefined。
+        let person = {
+            name: '张三',
+            age: 20,
+        }
+        let {
+            name,
+            age
+        } = person;
+        console.log(name);
+        console.log(age);
+    </script>
+</body>
+
+</html>

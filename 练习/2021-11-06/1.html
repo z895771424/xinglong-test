@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // 图片加载
+      function loadImage(src,resolve,reject) {
+        // 这个加载是需要耗费时间的
+        let image = new Image();
+        image.src = src;
+        image.onload = resolve(image);
+        image.onerror = reject;
+      }
+      loadImage('./Floating Arrows Teams Background Color.jpg', (image) => {
+        document.body.appendChild(image)
+      },()=>{
+        console.log('图片加载失败')
+      });
+      console.log('隆隆');
+    </script>
+  </body>
+</html>

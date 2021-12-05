@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function p1() {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve('longlong')
+          }, 1000)
+        })
+      }
+      function p2() {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve('xuxu')
+          }, 1000)
+        })
+      }
+
+      async function hd() {
+        //   let h1 = p1()
+        //   // console.log(h1)
+        //   // 这个Promise得等到上一个执行完之后再执行这个
+        //   let h2 = p2()
+        //   // console.log(h2)
+        //   let h1value = await h1
+        //   let h2value = await h2
+        //   console.log(h1value, h2value)
+        //   // setTimeout(() => {
+        //   //   console.log(h1, h2)
+        //   // }, 2000)
+        let res = await Promise.all([p1(), p2()])
+        console.log(res)
+      }
+      hd()
+    </script>
+  </body>
+</html>
