@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // function sayHi() {
+      //   console.log('Hello')
+      // }
+      // // 全局函数是window对象的方法
+      // window.sayHi()
+      // // 内部窗口高度
+      // console.log(window.innerHeight)
+
+      /**
+       * 文档对象模型
+       * 将所有页面内容表示为可以修改的对象
+       * document对象是页面的主要入口点。我们可以使用它来更改或创建页面上的任何内容
+       */
+
+      // document.body.style.background = 'red';
+      // // 在1秒钟后将其改回来
+      // setTimeout(() => {
+      //   document.body.style.background = '';
+      // }, 1000);
+
+      /**
+       * 浏览器对象模型
+       * 表示由浏览器主机环境提供的用于处理文档之外的所有内容的其他对象
+       *
+       * navigator对象提供了有关浏览器和操作系统的背景信息。navigator有许多属性，但是最为广为人知的两个属性是
+       * navigator.userAgent- 关于当前浏览器，navigator.platform-关于平台（可以帮助区分window/Linux/Mac等）
+       */
+
+      alert(location.href);
+      if (confirm('继续？')) {
+        // 浏览器重定向到另一个URL
+        location.href = 'http://www.baidu.com';
+      }
+    </script>
+  </body>
+</html>

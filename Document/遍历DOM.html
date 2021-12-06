@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <div>Begin</div>
+    <ul>
+      <li>Information</li>
+    </ul>
+    <div>End</div> -->
+
+    <table id="table">
+      <tr>
+        <td>one</td>
+        <td>two</td>
+      </tr>
+      <tr>
+        <td>three</td>
+        <td>four</td>
+      </tr>
+    </table>
+
+    <script>
+      /**
+       * DOM 让我们可以对元素和他们中的内容做任何事，但是首先我们需要获取对应的DOM对象
+       * 对DOM所有操作都是以document对象开始。它是DOM的主入口点，从它我们可以访问任何节点
+       * 在 DOM世界中，null就意味着不存在
+       */
+
+      // 子节点：childNodes,firstChild,lastChild
+
+      // 子节点：对应的是直系的子元素。换句话说。他们被完全嵌套给在给定的元素中。
+
+      // for (let i = 0; i < document.body.childNodes.length; i++) {
+      //   console.log(document.body.childNodes[i])
+      // }
+      // console.log(document.body.childNodes);
+
+      // firstChild 和 lastChild 属性时访问第一个和最后一个子元素的快捷方式
+      //  const node =  document.body.childNodes[1].lastChild;
+      //  console.log(node)
+      // 他们只是简写。如果元素存在子节点，那么下面的脚本运行结果将是true
+
+      // DOM 集合
+      // 正如我们看到的那样，childNodes看起来就像一个数组。但实际上并不是一个数组，而是一个集合，一个类似数组的可迭代对象
+      // 这个性质导致两个重要的结果
+      // 1 我们可以使用for ... of 来迭代它
+      // for (let node of document.body.childNodes) {
+      //   console.log(node)
+      // }
+      // 这是因为集合时可迭代的（提供了所需要的Symbol.iterator属性）
+      // 2 无法使用数组的方法，因为他不是一个数组
+      // 集合的性值所得到的第一个结果很不错。第二个结果也还可以忍受，因为我们想要使用数组的方法的话，我们可以使用Array.from方法来冲集合创建一个真数组
+
+      /**
+       * DOM 集合时只读的
+       * DOM 集合，甚至可以说本章中所列中的所有导航(navigation)属性都是只读的
+       * 我们不能通过类似childNodes[i] = ... 来操作节点
+       * 修改子节点需要使用其他方法
+       *
+       * DOM 集合是实时的
+       * 除小部分例外，几乎所有的DOM集合都是实时的。换句话说，他们反映了DOM的当前状态
+       * 如果我们保留一个对 elem.childNodes 的引用，然后想DOM中添加/移除系欸但，那么这些系欸但的更行会自动出现在集合中
+       *
+       * 不要使用for...in 来遍历集合
+       * 可以使用for...of 对集合进行迭代。但有时候人们会尝试使用 for...in 来迭代集合
+       * 请不要那么做。for...in循环是所有可枚举（enumerable）属性。集合还有一些额外的很少被用到的属性，通常这些属性也是我们不期望得到的
+       */
+
+      // 兄弟节点和父节点
+      // parentElement 属性返回的是元素类型的父节点，而parentNode 返回的是任何类型的父节点。这些属性通常来说是一样的：他们都是用于获取父节点
+      // console.log(document.body.parentNode)
+      // console.log(document.documentElement)
+
+      // <body> 的父节点是<html>
+      // console.log(document.body.parentNode === document.documentElement)
+      // head的后一个是<body>
+      // console.log(document.head.nextSibling);
+      // <body> 的前一个是<head>
+      // console.log(document.body.previousSibling)
+
+      /**
+       * 纯导航元素
+       * 上面列出的导航属性应用所有节点。例如，在childNodes中我们可以看到文本节点，元素节点，甚至如果有注释节点的话，也能访问到
+       * 但是对于很多任务来说，我们并不像要文本节点或注释节点。我们希望操作的是嗲表标签和形成页面结构的元素节点
+       */
+
+      /**
+       * child 仅那些作为元素节点的子代的节点
+       * firstElementChild,lastElementChild 第一个和最后一个元素
+       * previousElementSibling,nextElementSibling 兄弟元素
+       * parentElement 父元素
+       */
+
+      // console.log(document.documentElement.parentElement);
+      // console.log(document.documentElement.parentNode);
+      // 因为根节点 document.document(<html>)的父节点是document 但document不是一个元素
+
+      // for (let elem of document.body.children) {
+      //   console.log(elem);
+      // }
+
+      // 更多链接：表格
+      // 到现在，我们已经描述了基本的导航(navigation)属性
+      // 方便起见，某些类型的DOM元素可能会提供特定于其类型的其他元素
+      // 表格table是个，很好的例子，它代表了一个特别重要的情况
+      /**
+       * table.rows <tr> 元素的集合
+       * table.caption/tHead/tFoot -- 引用元素 <caption>,<thead><tfoot>
+       */
+
+      // 获取带有 two 的td
+      // const table = document.querySelector('table')
+      let td = table.rows[0].cells[1];
+      td.style.backgroundColor = 'red'; // highlight it
+    </script>
+  </body>
+</html>

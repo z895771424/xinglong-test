@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>123</div>
+  <script>
+    const div = document.querySelector('div');
+    div.onclick = function() {
+      console.log(123)
+    }
+    /**
+     * 1 由于历史原因，<head> 之前的空格和换行符均被忽略
+     * 2 如果我们在</body> 之后防止一些东西，那么它会被自动移动到body内，并处于body的最下方，因为HTML规范要求所有内容必须位于<body>内所以</body>之后不能有空格
+    */
+
+    // 自动修正
+    // 如果浏览器遇到格式不正确的HTML，他会形成DOM时自动更正它
+
+    // 表格永远有tbody
+    // 表格是一个有趣的 特殊例子。按照DOM规范，他们必须有<tbody>但HTML文本却（官方的）忽略了它。然后浏览器创建DOM时，自动的创建了<tbody>
+
+</script>
+</body>
+</html>

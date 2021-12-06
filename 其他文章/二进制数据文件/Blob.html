@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a download="hello.txt" href="#" id="link">Download</a>
+    <script>
+      // Blob 很容易用作<a>,<img>或其他标签的URL，来显示他们的内容。
+      // 多亏了type，让我们也可以下载/上传 Blob对象，在网络请求中，type自然地变成了Content-type.
+      // 让我们从一个简单地例子开始。通过点击链接，你可以下载一个具有动态生成地内容为 hello world 地Blob文件
+
+      let blob = new Blob(['Hello,world!'], { type: 'text/plain' });
+      link.href = URL.createObjectURL(blob);
+
+      // Blob 转换为 base64
+      // URL。createObjectURL 地一个代替方法是，将Blob转换为base64 编码地字符串
+      // 这种编码将二进制数据表示为一个有0到64地ASCII码组成地字符串，非常安全且可读。更重要地是--我们可以在data-url中使用此编码
+
+      
+    </script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <ul>
+      <li>The</li>
+      <li>test</li>
+    </ul>
+    <ul>
+      <li>has</li>
+      <li>passed</li>
+    </ul> -->
+    <a href="http://www.baidu.zip">test</a>
+    <a href="http://www.yi.cn">test1</a>
+    <script>
+      // const elements = document.querySelectorAll('ul > li:last-child');
+      // for (let elem of elements) {
+      //   console.log(elem.innerHTML);
+      // }
+      // 这个方法确实很强大，因为可以使用任何CSS选择器
+
+      // 也可以使用伪类
+      // CSS 选择器的伪类，例如 :hover 和 :active 也都会被支持。例如
+      // document.querySelectorAll(':hover') // 将鼠标返回指针现在已经结束的元素的集合
+
+      // matches
+      // elem.matches(css) 不会查找任何内容，它指挥检查elem是否给定的css选择器匹配。他返回true或false
+
+      // for (let elem of document.body.children) {
+      //   if (elem.matches('a[href$="zip"]')) {
+      //     console.log(elem.href);
+      //   }
+      // }
+      // const a = document.querySelector('a[href$="zip"]');
+      // console.log(a)
+
+      // closet 
+      // 元素的祖先：是父级，父级的父级，它的父级等。组件们一起组成了从元素到顶端的父级链
+      // elem.closest(css) 方法会查找于CSS选择器匹配的最近的祖先。elem自己也会被搜索
+      // 换句话说，方法closest在元素中得到了提升，并检查每个父级。如果他与选择器匹配，则停止搜索并返回该祖先
+
+      /**
+       * 实时集合，所有的 getElementsBy* 方法都会返回一个实时的（live）集合。这样的集合始终反应的是文档的当前状态
+      */
+    </script>
+  </body>
+</html>

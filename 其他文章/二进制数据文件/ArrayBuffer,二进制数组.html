@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /**
+     * 在Web开发中，当我们处理文件时（创建，上传，下载），经常会遇到二进制数据。另一个典型的应用场景时图像处理
+     * 这些都可以通过JavaScript处理，而且二进制操作性能更高
+     * 不过，在JavaScript中有很多二进制格式的数据，会有点混淆。仅仅举几个例子
+     * ArrayBuffer,Uint8Array,DataView,Blob,File及其他
+     * 于其他语言相比，JavaScript中的二进制数据时以非标准方式实现的。但是，当我们理清楚以后，一切就会变得相当简单了
+    */
+
+    const buffer = new ArrayBuffer(16) // 创建一个长度为16的buffer
+    console.log(buffer.byteLength)
+    // 它会分配一个16字节的连续内存空间，并用0进行预填充
+  </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /**
+       * 节点属性：type，tag和content
+       *
+       * DOM 节点类
+       * 不同的节点属性可能有不同的属性。例如，标签<a>相对应的元素节点具有链接相关的(link-related)属性
+       * 标签<input> 相对应的元素节点具有于输入相关的属性，文本节点于元素节点不同。但是所有这些标签对应的DOM系欸但之间也存在共有的属性和方法
+       * 因为所有类型的DOM节点都形成了一个单一的层次结构
+       * 每个DOM节点都属于相应的内建类
+       */
+
+      /**
+       * EventTarget 是根的抽象类。该类的对象从未被创建。作为一个基础，以便让所有DOM节点都支持所谓的事件
+       * Node 也是一个抽象类，充当DOM节点的基础。他提供了树的核心功能：parentNode，nextSibling,childNodes等，他们都是getter
+       * Node类对象从未被创建。但是有一些继承自他的具体的节点类，例如，文本节点的Text，元素节点Element,以及更多异域类，例如注释节点的Comment
+       * Element 是DOM元素的基本类。它提供了元素级的导航，例如 nextElementSibling,children,以及向getElmentsByTagName和querySelector 这样的搜索方法。
+       * 浏览器不仅仅有HTML，还会有XML和SVG。Element类充当更多特定的基本类：SVGElement,XMLElement和HTMLElement
+       * HTMLElement 最终是所有HTML元素的基本类。各种HTML元素均继承它：
+       * 因此，给定节点的全部属性和方法都是继承的结果
+       */
+
+      /**
+       * 例如，我们考虑一下<input>元素的DOM对象。它属于HTMLInputElement类
+       * 他获取属性和方法，并将其作为列类的叠加
+       *
+       * HTMLInputElement 该类提供特定输入的属性
+       * HTMLElement 他提供了通用的HTML元素方法
+       * Element 提供通用 generic 元素方法
+       * Node 提供通用DOM节点属性
+       * EventTarget 为事件（包括事件本身）提供支持
+       * 最后，它继承自Object，因为像hasOwnProperty 这样的普通对象也是可用的
+       */
+
+      // 我们可以通过回调来查看DOM节点类名，因为对象通常都具有constructor属性。它引用类的constructor，constructor.name 就是它的名称
+
+      // alert(document.body.constructor.name);
+
+      // 检查继承
+      console.log(document.body instanceof HTMLBodyElement);
+      console.log(document.body instanceof HTMLElement);
+      console.log(document.body instanceof Element);
+      console.log(document.body instanceof Node);
+      console.log(document.body instanceof EventTarget);
+      // 正如我们所看的，DOM节点是常规的JavaScript对象。他们使用原型的类进行继承
+      // 在浏览器中
+      // console.dir(elem);
+
+      // 在现代脚本中，我们可以使用instanceof 和其他基于类的检查方法类查看节点类型，有时nodeType可能更简单
+      // 我们只能读取 NodeType 而不能修改它
+
+      
+    </script>
+  </body>
+</html>
